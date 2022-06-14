@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Prediction</title>
+
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <!-- Font Awesome -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+     <!-- MDB -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet"/>
+
+     <style>
+        .field{
+            padding: 15px;
+            background-color: #f2f2f2;
+        }
+        table,tr,td{
+            text-align: center;
+        }
+     </style>
+
+</head>
+<body class="mx-3">
+    
+    <div class="container p-0 bg-light">
+
+        <h1 class="text-center m-0 bg-primary text-white p-5">Personality Prediction</h1>
+
+        <form action="http://localhost:3000/prediction" method="GET">
+                
+            <table class="table table-hover py-3">
+                <thead>
+                    <tr class="bg-dark text-white">
+                    <th scope="col">#</th>
+                    <th scope="col" style="width: 35%;">Question</th>
+                    <th scope="col">Strongly disagree</th>
+                    <th scope="col">Somewhat disagree</th>
+                    <th scope="col">Neutral</th>
+                    <th scope="col">Somewhat agree</th>
+                    <th scope="col">Strongly agree </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>I am the life of the party</td>
+                    <td>
+                        <input type="radio" name="contact" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>I don't talk a lot.</td>
+                    <td>
+                        <input type="radio" name="contact2" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact2" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact2" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact2" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact2" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>I feel comfortable around people.</td>
+                    <td>
+                        <input type="radio" name="contact3" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact3" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact3" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact3" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact3" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">4</th>
+                    <td>I keep in the background.</td>
+                    <td>
+                        <input type="radio" name="contact4" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact4" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact4" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact4" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact4" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">5</th>
+                    <td>I start conversations.</td>
+                    <td>
+                        <input type="radio" name="contact5" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact5" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact5" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact5" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact5" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">6</th>
+                    <td>I have little to say.</td>
+                    <td>
+                        <input type="radio" name="contact6" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact6" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact6" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact6" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact6" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">7</th>
+                    <td>I talk to a lot of different people at parties.</td>
+                    <td>
+                        <input type="radio" name="contact7" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact7" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact7" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact7" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact7" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">8</th>
+                    <td>I don't like to draw attention to myself.</td>
+                    <td>
+                        <input type="radio" name="contact8" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact8" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact8" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact8" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact8" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">9</th>
+                    <td>I don't mind being the center of attention.</td>
+                    <td>
+                        <input type="radio" name="contact9" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact9" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact9" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact9" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact9" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">10</th>
+                    <td>I am quiet around strangers.</td>
+                    <td>
+                        <input type="radio" name="contact10" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact10" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact10" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact10" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact10" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">11</th>
+                    <td>I get stressed out easily.</td>
+                    <td>
+                        <input type="radio" name="contact11" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact11" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact11" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact11" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact11" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">12</th>
+                    <td>I am relaxed most of the time.</td>
+                    <td>
+                        <input type="radio" name="contact12" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact12" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact12" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact12" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact12" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">13</th>
+                    <td>I worry about things.</td>
+                    <td>
+                        <input type="radio" name="contact13" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact13" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact13" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact13" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact13" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">14</th>
+                    <td>I seldom feel blue.</td>
+                    <td>
+                        <input type="radio" name="contact14" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact14" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact14" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact14" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact14" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">15</th>
+                    <td>I am easily disturbed.</td>
+                    <td>
+                        <input type="radio" name="contact15" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact15" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact15" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact15" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact15" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">16</th>
+                    <td>I get upset easily.</td>
+                    <td>
+                        <input type="radio" name="contact16" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact16" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact16" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact16" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact16" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">17</th>
+                    <td>I change my mood a lot.</td>
+                    <td>
+                        <input type="radio" name="contact17" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact17" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact17" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact17" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact17" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">18</th>
+                    <td>I have frequent mood swings.</td>
+                    <td>
+                        <input type="radio" name="contact18" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact18" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact18" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact18" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact18" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">19</th>
+                    <td>I get irritated easily.</td>
+                    <td>
+                        <input type="radio" name="contact19" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact19" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact19" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact19" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact19" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">20</th>
+                    <td>I often feel blue.</td>
+                    <td>
+                        <input type="radio" name="contact20" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact20" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact20" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact20" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact20" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">21</th>
+                    <td>I feel little concern for others.</td>
+                    <td>
+                        <input type="radio" name="contact21" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact21" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact21" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact21" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact21" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">22</th>
+                    <td>I am interested in people</td>
+                    <td>
+                        <input type="radio" name="contact22" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact22" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact22" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact22" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact22" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">23</th>
+                    <td>I insult people.</td>
+                    <td>
+                        <input type="radio" name="contact23" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact23" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact23" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact23" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact23" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">24</th>
+                    <td>I sympathize with others' feelings.</td>
+                    <td>
+                        <input type="radio" name="contact24" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact24" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact24" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact24" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact24" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">25</th>
+                    <td>I am not interested in other people's problems.</td>
+                    <td>
+                        <input type="radio" name="contact25" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact25" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact25" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact25" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact25" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">26</th>
+                    <td>I have a soft heart.</td>
+                    <td>
+                        <input type="radio" name="contact26" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact26" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact26" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact26" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact26" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">27</th>
+                    <td>I am not really interested in others.</td>
+                    <td>
+                        <input type="radio" name="contact27" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact27" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact27" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact27" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact27" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">28</th>
+                    <td>I take time out for others.</td>
+                    <td>
+                        <input type="radio" name="contact28" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact28" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact28" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact28" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact28" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">29</th>
+                    <td>I feel others' emotions.</td>
+                    <td>
+                        <input type="radio" name="contact29" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact29" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact29" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact29" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact29" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">30</th>
+                    <td>I make people feel at ease.</td>
+                    <td>
+                        <input type="radio" name="contact30" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact30" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact30" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact30" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact30" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">31</th>
+                    <td>I am always prepared.</td>
+                    <td>
+                        <input type="radio" name="contact31" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact31" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact31" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact31" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact31" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">32</th>
+                    <td>I leave my belongings around.</td>
+                    <td>
+                        <input type="radio" name="contact32" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact32" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact32" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact32" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact32" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">33</th>
+                    <td>I pay attention to details.</td>
+                    <td>
+                        <input type="radio" name="contact33" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact33" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact33" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact33" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact33" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">34</th>
+                    <td>I make a mess of things.</td>
+                    <td>
+                        <input type="radio" name="contact34" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact34" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact34" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact34" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact34" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">35</th>
+                    <td>I get chores done right away.</td>
+                    <td>
+                        <input type="radio" name="contact35" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact35" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact35" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact35" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact35" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">36</th>
+                    <td>I often forget to put things back in their proper place.</td>
+                    <td>
+                        <input type="radio" name="contact36" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact36" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact36" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact36" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact36" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">37</th>
+                    <td>I like order.</td>
+                    <td>
+                        <input type="radio" name="contact37" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact37" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact37" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact37" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact37" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">38</th>
+                    <td>I shirk my duties.</td>
+                    <td>
+                        <input type="radio" name="contact38" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact38" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact38" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact38" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact38" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">39</th>
+                    <td>I follow a schedule.</td>
+                    <td>
+                        <input type="radio" name="contact39" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact39" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact39" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact39" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact39" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">40</th>
+                    <td>I am exacting in my work.</td>
+                    <td>
+                        <input type="radio" name="contact40" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact40" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact40" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact40" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact40" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">41</th>
+                    <td>I have a rich vocabulary.</td>
+                    <td>
+                        <input type="radio" name="contact41" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact41" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact41" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact41" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact41" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">42</th>
+                    <td>I have difficulty understanding abstract ideas.</td>
+                    <td>
+                        <input type="radio" name="contact42" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact42" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact42" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact42" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact42" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">43</th>
+                    <td>I have a vivid imagination.</td>
+                    <td>
+                        <input type="radio" name="contact43" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact43" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact43" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact43" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact43" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">44</th>
+                    <td>I am not interested in abstract ideas.</td>
+                    <td>
+                        <input type="radio" name="contact44" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact44" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact44" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact44" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact44" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">45</th>
+                    <td>I have excellent ideas.</td>
+                    <td>
+                        <input type="radio" name="contact45" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact45" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact45" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact45" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact45" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">46</th>
+                    <td>I do not have a good imagination.</td>
+                    <td>
+                        <input type="radio" name="contact46" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact46" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact46" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact46" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact46" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">47</th>
+                    <td>I am quick to understand things.</td>
+                    <td>
+                        <input type="radio" name="contact47" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact47" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact47" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact47" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact47" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">48</th>
+                    <td>I use difficult words.</td>
+                    <td>
+                        <input type="radio" name="contact48" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact48" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact48" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact48" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact48" value=5>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">49</th>
+                    <td>I spend time reflecting on things.</td>
+                    <td>
+                        <input type="radio" name="contact49" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact49" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact49" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact49" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact49" value=5>                    
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="row">50</th>
+                    <td>I am full of ideas.</td>
+                    <td>
+                        <input type="radio" name="contact50" value=1>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact50" value=2>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact50" value=3>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact50" value=4>
+                    </td>
+                    <td>
+                        <input type="radio" name="contact50" value=5>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center">
+                <input type="submit" class="btn btn-primary my-5 col-2 w-full">
+            </div>
+
+        </form>
+
+    </div> 
+
+
+
+</body>
+</html>
